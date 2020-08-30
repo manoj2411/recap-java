@@ -9,7 +9,10 @@ public class Stacks {
 //        System.out.println("Empty peek: " + s.peek()); // java.util.EmptyStackException
         s.push(10);
         s.push(20);
-//        s.add(50); // from collections API
+        s.add(50); // from collections API
+        System.out.println("search(10): " + s.search(10));
+        System.out.println("search(10): " + s.search(20));
+        System.out.println("search(10): " + s.search(50));
         System.out.println("peek: " + s.peek());
         s.pop();
         System.out.println("pop: " + s.pop());
