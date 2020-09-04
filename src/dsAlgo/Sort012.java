@@ -4,7 +4,7 @@ public class Sort012 {
     public static void main(String[] args) {
         Node node = new Node(2);
         node.next = new Node(1);
-        Node res = LinkedList.segregate(node);
+        Node res = LinkList.segregate(node);
 
         while (res != null) {
             System.out.print(res.data + " ");
@@ -24,7 +24,7 @@ class Node
         next = null;
     }
 }
-class LinkedList
+class LinkList
 {
     static Node segregate(Node head)
     {
