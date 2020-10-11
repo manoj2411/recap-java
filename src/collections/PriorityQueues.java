@@ -17,7 +17,15 @@ public class PriorityQueues {
         maxHeap.add(2);
         maxHeap.add(1);
         maxHeap.add(-1);
+
+        System.out.println("remove: " + maxHeap.remove(1));
+        System.out.println("remove: " + maxHeap.remove(1));
+
         System.out.println("peek: " + maxHeap.peek());
+        while(!maxHeap.isEmpty()) {
+            System.out.println("poll: " + maxHeap.poll());
+        }
+
 
 
     }
