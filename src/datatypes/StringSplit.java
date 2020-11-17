@@ -9,5 +9,10 @@ public class StringSplit {
 
         arr = "Hey  World !!".split("\\s+");
         System.out.println("split by space ' '  : " + Arrays.toString(arr));
+
+		String[] arr = "hey  there  bye ".split(" ");
+		// String[] arr = "hey  there  bye ".split("\\s+");
+		System.out.println("splitted: " + Arrays.toString(arr));
+
     }
 }
