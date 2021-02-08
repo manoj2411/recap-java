@@ -1,3 +1,5 @@
+import java.util.*;
+
 /*
 	Design Unix File Search API to search file with different arguments as "extension", "name", "size" ...
 	  The design should be maintainable to add new contraints.
@@ -13,25 +15,33 @@
 
 */
 
-interface FileItem {
+abstract class FileItem {
 	boolean isDirectory;
 	String name;
-	int getSize();
+	int getSize() { return 0; };
 }
 
-class File implements FileItem {
-	boolean isDirectory = false;
-	String content;
+class File extends FileItem {
 
+	File(String n) {
+		isDirectory = false;
+		name = n;
+	}
 	// boolean shouldInclude(SearchParams param) {
 
 	// }
+
+	String extension() {
+		return null;
+	}
 }
 
-class Directory implements FileItem {
-	boolean isDirectory = true;
-	List<FileItem> children;
+class Directory extends FileItem {
 
+	List<FileItem> children;
+	Directory() {
+		isDirectory = true;
+	}
 	// List<String> search(SearchParams param) {
 	// 	List<String> result = new LinkedList<>();
 
@@ -56,26 +66,26 @@ class SearchParams {
 }
 
 interface IFilter {
-	boolean shouldInclude(SearchParams params, File file);
+	public boolean shouldInclude(SearchParams params, File file);
 }
 
 class NameFilter implements IFilter {
-	boolean shouldInclude(SearchParams params, File file) {
+	public boolean shouldInclude(SearchParams params, File file) {
 		if(params.name == null) return true;
 		return params.name.equals(file.name);
 	}
 }
 
 class ExtensionFilter implements IFilter {
-	boolean shouldInclude(SearchParams params, File file) {
+	public boolean shouldInclude(SearchParams params, File file) {
 		if(params.extension == null) return true;
-		return params.extension.equals(file.extension);
+		return params.extension.equals(file.extension());
 	}
 }
 
 class MinSizeFilter implements IFilter {
-	boolean shouldInclude(SearchParams params, File file) {
+	public boolean shouldInclude(SearchParams params, File file) {
 		if(params.extension == null) return true;
-		return params.extension.equals(file.extension);
+		return params.extension.equals(file.extension());
 	}
 }
