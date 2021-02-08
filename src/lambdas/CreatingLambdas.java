@@ -9,11 +9,13 @@ class CreatingLambdas {
 
     public static void main(String[] args) {
 
-        testGeeting("Ram", (String name) -> "Hey, " + name + "!");
+        testGeeting("laddu", (String name) -> "Hey, " + name + "!");
 
-        testGeeting("Chiku", (String name) -> "Howdy, " + name + "!");
+        testGeeting("daggu", (String name) -> "Howdy, " + name + "!");
 
-        testGeeting("Chiku", (String name) -> name.isEmpty() ? "Name missing" : "Hey, " + name + "!");
+        testGeeting("Chiku",
+            (String name) -> name.isEmpty() ? "Name missing" : "Hey, " + name + "!");
+
         testGeeting("",
             (String name) -> name.isEmpty() ? "Name missing!" : "Hey, " + name + "!");
     }
