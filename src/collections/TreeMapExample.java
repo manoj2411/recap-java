@@ -17,5 +17,8 @@ public class TreeMapExample {
 
         System.out.println(tmap.ceilingKey(2)); // 5
         System.out.println(tmap.floorKey(2)); // null
+
+        System.out.println(tmap.floorKey(10)); // 10
+        System.out.println(tmap.floorKey(10)); // 10
     }
 }
