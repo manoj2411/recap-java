@@ -8,10 +8,10 @@ import java.util.concurrent.*;
      - both are functional interfaces, i.e. single method to override
      - runnable returns void
      - callable returns the Future of T (type)
-       - Future means future value, that we'll eventually get.
+       - Future means future value, that we'll eventually resolve.
 
 */
-class FutureAndCallable {
+class FutureAndCallable00 {
 
     public static void main(String[] args) {
         Callable<String> task1 = new Callable<String>() {

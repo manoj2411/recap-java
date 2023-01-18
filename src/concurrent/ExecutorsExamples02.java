@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class ExecutorsExamples {
+public class ExecutorsExamples02 {
 
   /*  ExecutorService : for running async tasks on a pool of threads and API for assigning tasks */
 
@@ -24,16 +24,18 @@ public class ExecutorsExamples {
     // ExecutorService can execute Runnable and Callable tasks
     Runnable runTask = () -> {
         try {
-          System.out.println("["+Thread.currentThread()+"][runnable] a heavy task ...");
+          System.out.println("["+Thread.currentThread()+"][runnable] starting a task ...");
           TimeUnit.MILLISECONDS.sleep(300);
+          System.out.println("["+Thread.currentThread()+"][runnable] end of task ...");
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
     };
 
     Callable<String> callTask = () -> {
-      System.out.println("["+Thread.currentThread()+"][callable] a heavy task ...");
+      System.out.println("["+Thread.currentThread()+"][callable] starting a task ...");
       TimeUnit.MILLISECONDS.sleep(300);
+      System.out.println("["+Thread.currentThread()+"][callable] end of task ...");
       return "The result";
     };
 

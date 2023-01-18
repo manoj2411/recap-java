@@ -4,24 +4,24 @@ import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 
-public class CompletableFuturesEx {
+public class CompletableFuturesExample03 {
 
     public static void main(String[] args) {
         log("starting...");
 
         CompletableFuture
-                .supplyAsync(() -> {
+                .supplyAsync(() -> { // supply or generate a value and take nothing
                     heavyProcessing();
                     int num = new Random().nextInt(20);
                     log("num: " + num);
                     return num;
                 })
-                .thenApply(n -> {
+                .thenApply(n -> { // take a value, apply transformation, return new value
                     heavyProcessing();
                     log("Applying doubler");
                     return n * 2;
                 })
-                .thenAccept(n -> {
+                .thenAccept(n -> { // accept or take a value and eat it, return nothing
                     heavyProcessing();
                     log("Final number: " + n);
 
