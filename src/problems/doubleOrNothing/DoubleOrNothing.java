@@ -1,4 +1,4 @@
-package examples.doubleOrNothing;
+package problems.doubleOrNothing;
 
 import java.util.*;
 
